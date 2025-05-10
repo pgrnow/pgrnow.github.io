@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGRNow - Punishing: Gray Raven Global Tracker</title>
+    <meta name="description" content="Track Punishing: Gray Raven Global server events, maintenance, and updates">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/images/pgr-icon.webp" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><img src="assets/images/pgr-logo.webp" alt="PGR Logo" class="logo"> PGRNow</h1>
+            <div class="server-time">
+                <span><i class="fas fa-globe"></i> Server Time (UTC): </span>
+                <span id="server-time">Loading...</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="current-event">
+            <h2><i class="fas fa-fire"></i> Current Event</h2>
+            <div id="current-event" class="event-card">
+                <p>Loading current event...</p>
+            </div>
+        </section>
+
+        <section class="countdown-section">
+            <h2><i class="fas fa-clock"></i> Next Update Countdown</h2>
+            <div id="main-countdown" class="countdown">
+                <div class="countdown-item">
+                    <span id="countdown-days">00</span>
+                    <span>Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="countdown-hours">00</span>
+                    <span>Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="countdown-minutes">00</span>
+                    <span>Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="countdown-seconds">00</span>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <p id="countdown-target" class="countdown-target">Counting down to next event</p>
+        </section>
+
+        <section class="upcoming-events">
+            <h2><i class="fas fa-calendar-alt"></i> Upcoming Events</h2>
+            <div id="upcoming-events" class="events-grid">
+                <!-- Events will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>PGRNow - Unofficial Punishing: Gray Raven Global Tracker</p>
+            <p class="last-updated"><i class="fas fa-sync-alt"></i> Last updated: <span id="last-updated">-</span></p>
+            <p class="disclaimer">This is an unofficial fan project. Not affiliated with Kuro Game.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
