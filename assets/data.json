@@ -14,7 +14,16 @@
             "start_date": "2025-05-14T02:00:00Z",
             "end_date": "2025-06-25T01:59:59Z",
             "banner_image": "assets/images/wither-to-shine.jpg",
+            "link": " ",
             "description": "New story chapter, new frames: Parhelion and Daemonissa"
+        },
+        {
+            "name": "Dream Till The Timeless End",
+            "start_date": "2025-06-25T02:00:00Z",
+            "end_date": "2025-08-06T01:59:59Z",
+            "banner_image": "assets/images/dream-till-the-timeless-end.jpg",
+            "link": " ",
+            "description": "TBA<br> <em>Please note that the aforementioned date is still approximate. The actual date will be announced at a later time.</em>"
         },
         
         {
