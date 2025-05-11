@@ -1,8 +1,5 @@
-// PGRNow - Punishing: Gray Raven Global Tracker
-// Complete JavaScript with proper year handling for current vs past events
-
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM Elements
+
     const currentEventElement = document.getElementById('current-event');
     const upcomingEventsElement = document.getElementById('upcoming-events');
     const pastEventsContainer = document.getElementById('past-events-container');
@@ -11,10 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const countdownTargetElement = document.getElementById('countdown-target');
     const togglePastEventsButton = document.getElementById('toggle-past-events');
 
-    // Initialize the tracker
     initTracker();
 
-    // Toggle past events visibility
     togglePastEventsButton.addEventListener('click', function() {
         pastEventsContainer.classList.toggle('hidden');
         const isHidden = pastEventsContainer.classList.contains('hidden');
@@ -24,20 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function initTracker() {
         try {
-            // Load and process event data
+            
             const data = await loadEventData();
-            const serverTime = new Date(); // UTC time
+            const serverTime = new Date(); 
             const currentYear = serverTime.getUTCFullYear();
             
-            // Categorize events with proper year handling
-            const categorizedEvents = categorizeEvents(data.events, serverTime, currentYear);
             
-            // Update UI
+            const categorizedEvents = categorizeEvents(data.events, serverTime, currentYear);
+                       
             updateLastUpdated(data.last_updated);
             displayEvents(categorizedEvents);
             setupCountdown(categorizedEvents, serverTime);
             
-            // Start server time updates
             updateServerTime();
             setInterval(updateServerTime, 1000);
             
@@ -66,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const endDate = new Date(event.end_date);
             const eventYear = startDate.getUTCFullYear();
             
-            // Check if event is from current year
             if (eventYear === currentYear) {
                 if (serverTime > endDate) {
                     result.past.push(event);
@@ -76,20 +68,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     result.upcoming.push(event);
                 }
             } 
-            // Event from previous years always goes to past
             else if (eventYear < currentYear) {
                 result.past.push(event);
             }
-            // Event from future years goes to upcoming
+
             else {
                 result.upcoming.push(event);
             }
         });
 
-        // Sort past events (newest first)
+
         result.past.sort((a, b) => new Date(b.end_date) - new Date(a.end_date));
         
-        // Sort upcoming events (soonest first)
+
         result.upcoming.sort((a, b) => new Date(a.start_date) - new Date(b.start_date));
         
         return result;
@@ -137,20 +128,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function createEventHTML(event) {
-        return `
-            <h3>${event.name}</h3>
-            <p class="event-date"><i class="far fa-calendar-alt"></i> ${formatDateTime(new Date(event.start_date))} - ${formatDateTime(new Date(event.end_date))}</p>
-            ${event.banner_image ? `<img src="${event.banner_image}" alt="${event.name}" class="event-banner" loading="lazy">` : ''}
-            <p>${event.description}</p>
-            ${event.notes ? `<div class="event-notes"><strong>Notes:</strong> ${event.notes}</div>` : ''}
-        `;
+    const bannerContent = event.banner_image 
+        ? `<div class="banner-container">
+               <a href="${event.link || '#'}" target="_blank" rel="noopener noreferrer">
+                   <img src="${event.banner_image}" alt="${event.name}" class="event-banner" loading="lazy">
+               </a>
+           </div>`
+        : '';
+    
+    return `
+        <h3>${event.name}</h3>
+        <p class="event-date"><i class="far fa-calendar-alt"></i> ${formatDateTime(new Date(event.start_date))} - ${formatDateTime(new Date(event.end_date))}</p>
+        ${bannerContent}
+        <p>${event.description}</p>
+        ${event.notes ? `<div class="event-notes"><strong>Notes:</strong> ${event.notes}</div>` : ''}
+    `;
     }
 
     function setupCountdown(events, serverTime) {
         let targetDate = null;
         let targetName = 'No upcoming events';
         
-        // Check current event ending soon (within 7 days)
         if (events.current) {
             const endDate = new Date(events.current.end_date);
             if ((endDate - serverTime) < (7 * 24 * 60 * 60 * 1000)) {
@@ -159,13 +157,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // If no current event ending soon, use next upcoming event
         if (!targetDate && events.upcoming.length > 0) {
             targetDate = new Date(events.upcoming[0].start_date);
             targetName = events.upcoming[0].name;
         }
         
-        // Update UI and start countdown if we have a target
         if (targetDate) {
             countdownTargetElement.textContent = `Counting down to: ${targetName}`;
             startCountdown(targetDate);
