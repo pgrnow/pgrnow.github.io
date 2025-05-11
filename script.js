@@ -4,6 +4,8 @@ const upcomingEventsElement = document.getElementById('upcoming-events');
 const serverTimeElement = document.getElementById('server-time');
 const lastUpdatedElement = document.getElementById('last-updated');
 const countdownTargetElement = document.getElementById('countdown-target');
+const togglePastEventsButton = document.getElementById('toggle-past-events');
+const pastEventsContainer = document.getElementById('past-events-container');
 
 // Load event data
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,34 +21,47 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update last updated time
             lastUpdatedElement.textContent = formatDateTime(new Date(data.last_updated));
             
-            // Process events
+            // Get current server time (UTC)
             const now = new Date();
             const serverTime = new Date(now); // UTC for Global server
             
-            // Find current event
-            const currentEvent = data.events.find(event => {
-                const start = new Date(event.start_date);
-                const end = new Date(event.end_date);
-                return serverTime >= start && serverTime <= end;
+            // Categorize events
+            const events = {
+                past: [],
+                current: null,
+                upcoming: []
+            };
+            
+            // Process each event
+            data.events.forEach(event => {
+                const startDate = new Date(event.start_date);
+                const endDate = new Date(event.end_date);
+                
+                if (serverTime > endDate) {
+                    // Past event
+                    events.past.push(event);
+                } else if (serverTime >= startDate && serverTime <= endDate) {
+                    // Current event
+                    events.current = event;
+                } else {
+                    // Upcoming event
+                    events.upcoming.push(event);
+                }
             });
             
-            // Display current event
-            if (currentEvent) {
-                displayEvent(currentEvent, currentEventElement);
-            } else {
-                currentEventElement.innerHTML = '<p>No current event running</p>';
-            }
+            // Sort past events (newest first)
+            events.past.sort((a, b) => new Date(b.end_date) - new Date(a.end_date));
             
-            // Find upcoming events (sorted by start date)
-            const upcomingEvents = data.events
-                .filter(event => new Date(event.start_date) > serverTime)
-                .sort((a, b) => new Date(a.start_date) - new Date(b.start_date));
+            // Sort upcoming events (soonest first)
+            events.upcoming.sort((a, b) => new Date(a.start_date) - new Date(b.start_date));
             
-            // Display upcoming events
-            displayUpcomingEvents(upcomingEvents);
+            // Display events
+            displayCurrentEvent(events.current);
+            displayUpcomingEvents(events.upcoming);
+            displayPastEvents(events.past);
             
             // Set up countdown
-            setupCountdown(upcomingEvents, currentEvent, serverTime);
+            setupCountdown(events.upcoming, events.current, serverTime);
             
             // Update server time continuously
             updateServerTime();
@@ -82,10 +97,19 @@ function displayEvent(event, element) {
     elementToUpdate.innerHTML = html;
 }
 
-// Display all upcoming events
+// Display current event
+function displayCurrentEvent(event) {
+    if (event) {
+        displayEvent(event, currentEventElement);
+    } else {
+        currentEventElement.innerHTML = '<p>No current event running</p>';
+    }
+}
+
+// Display upcoming events
 function displayUpcomingEvents(events) {
     if (events.length > 0) {
-        upcomingEventsElement.innerHTML = ''; // Clear loading message
+        upcomingEventsElement.innerHTML = '';
         
         events.forEach((event, index) => {
             const eventElement = document.createElement('div');
@@ -98,6 +122,34 @@ function displayUpcomingEvents(events) {
         upcomingEventsElement.innerHTML = '<p>No upcoming events scheduled</p>';
     }
 }
+
+// display most recent past events
+function displayPastEvents(events) {
+    if (events.length > 0) {
+        const pastEventsHTML = events.map(event => `
+            <div class="event-card past-event-card">
+                <h3>${event.name}</h3>
+                <p class="event-date"><i class="far fa-calendar-alt"></i> ${formatDateTime(new Date(event.start_date))} - ${formatDateTime(new Date(event.end_date))}</p>
+                ${event.banner_image ? `<img src="${event.banner_image}" alt="${event.name}" class="event-banner" loading="lazy">` : ''}
+                <p>${event.description}</p>
+                ${event.notes ? `<div class="event-notes"><strong>Notes:</strong> ${event.notes}</div>` : ''}
+            </div>
+        `).join('');
+        
+        pastEventsContainer.innerHTML = pastEventsHTML;
+    } else {
+        pastEventsContainer.innerHTML = '<p>No past events recorded</p>';
+    }
+}
+
+// toggle past events display
+togglePastEventsButton.addEventListener('click', function() {
+    pastEventsContainer.classList.toggle('hidden');
+    const isHidden = pastEventsContainer.classList.contains('hidden');
+    
+    this.querySelector('span').textContent = isHidden ? 'Show Past Events' : 'Hide Past Events';
+    this.classList.toggle('active');
+});
 
 // Set up the countdown timer
 function setupCountdown(upcomingEvents, currentEvent, serverTime) {
