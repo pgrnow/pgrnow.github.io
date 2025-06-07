@@ -1,5 +1,5 @@
 {
-    "last_updated": "2025-05-10T12:03:00Z",
+    "last_updated": "2025-07-06T14:22:00Z",
     "events": [
         {
             "name": "Dream Till The Timeless End",
@@ -128,6 +128,206 @@
             "banner_image": "assets/images/spiral-of-chronos.jpg",
             "link": "https://pgr.kurogame.net/news/571",
             "description": "New story chapter, new frames: Hyperreal"
+        },
+        {
+            "name": "Left Unsaid",
+            "start_date": "2023-11-09T02:00:00Z",
+            "end_date": "2023-12-12T01:59:59Z",
+            "banner_image": "assets/images/left-unsaid.jpeg",
+            "link": "https://pgr.kurogame.net/news/533",
+            "description": "New story chapter, new frames: Vitrum"
+        },
+        {
+            "name": "Across the Ruined Sea",
+            "start_date": "2023-09-26T02:00:00Z",
+            "end_date": "2023-11-09T01:59:59Z",
+            "banner_image": "assets/images/across-the-ruined-sea.jpg",
+            "link": "https://pgr.kurogame.net/news/496",
+            "description": "New story chapter, new frames: Stigmata"
+        },
+        {
+            "name": "Cinder Burns",
+            "start_date": "2023-08-22T02:00:00Z",
+            "end_date": "2023-09-26T01:59:59Z",
+            "banner_image": "assets/images/cinder-burns.jpg",
+            "link": "https://pgr.kurogame.net/news/448",
+            "description": "New story chapter, new frames: Arca"
+        },
+        {
+            "name": "A New Divide",
+            "start_date": "2023-07-13T02:00:00Z",
+            "end_date": "2023-08-22T01:59:59Z",
+            "banner_image": "assets/images/a-new-divide.jpeg",
+            "link": "https://pgr.kurogame.net/news/430",
+            "description": "New story chapter, new frames: Scire"
+        },
+        {
+            "name": "The Ark Beyond",
+            "start_date": "2023-06-15T02:00:00Z",
+            "end_date": "2023-07-13T01:59:59Z",
+            "banner_image": "assets/images/the-ark-beyond.jpg",
+            "link": "https://pgr.kurogame.net/news/423",
+            "description": "New story chapter, new frames: Starveil"
+        },
+        {
+            "name": "Her Last Bow",
+            "start_date": "2023-05-11T02:00:00Z",
+            "end_date": "2023-06-15T01:59:59Z",
+            "banner_image": "assets/images/her-last-bow.jpg",
+            "link": "https://pgr.kurogame.net/news/394",
+            "description": "New story chapter, new frames: Starfarer"
+        },
+        {
+            "name": "Reveries with a Whale",
+            "start_date": "2023-04-07T02:00:00Z",
+            "end_date": "2023-05-10T01:59:59Z",
+            "banner_image": "assets/images/reveries-with-a-whale.jpg",
+            "link": "https://pgr.kurogame.net/news/185",
+            "description": "New story chapter, new frames: Dragontoll"
+        },
+        {
+            "name": "Recitativo di Fantasia",
+            "start_date": "2023-03-01T02:00:00Z",
+            "end_date": "2023-04-06T01:59:59Z",
+            "banner_image": "assets/images/recitativo-di-fantasia.jpg",
+            "link": "https://pgr.kurogame.net/news/163",
+            "description": "New story chapter, new frames: Capriccio"
+        },
+        {
+            "name": "The Surviving Lucem",
+            "start_date": "2023-01-19T02:00:00Z",
+            "end_date": "2023-02-28T01:59:59Z",
+            "banner_image": "assets/images/the-surviving-lucem.jpg",
+            "link": "https://pgr.kurogame.net/news/145",
+            "description": "New story chapter, new frames: Empyrea"
+        },
+        {
+            "name": "Evernight Beat",
+            "start_date": "2022-12-22T02:00:00Z",
+            "end_date": "2023-01-18T01:59:59Z",
+            "banner_image": "assets/images/evernight-beat.jpg",
+            "link": "https://pgr.kurogame.net/news/142",
+            "description": "New story chapter, new frames: Flambeau"
+        },
+        {
+            "name": "The Last Spark",
+            "start_date": "2022-11-17T02:00:00Z",
+            "end_date": "2022-12-22T01:59:59Z",
+            "banner_image": "assets/images/the-last-spark.jpg",
+            "link": "https://pgr.kurogame.net/news/137",
+            "description": "New story chapter, new frames: Garnet"
+        },
+        {
+            "name": "Inscription of Labyrinth",
+            "start_date": "2022-10-18T02:00:00Z",
+            "end_date": "2022-11-17T01:59:59Z",
+            "banner_image": "assets/images/inscription-of-labyrinth.jpg",
+            "link": "https://pgr.kurogame.net/news/133",
+            "description": "New story chapter, new frames: XII"
+        },
+        {
+            "name": "Imprisoned Sight",
+            "start_date": "2022-09-16T02:00:00Z",
+            "end_date": "2022-10-17T01:59:59Z",
+            "banner_image": "assets/images/imprisoned-sight.jpg",
+            "link": "https://pgr.kurogame.net/news/121",
+            "description": "New story chapter, new frames: Glory"
+        },
+        {
+            "name": "Echo Aria",
+            "start_date": "2022-08-16T02:00:00Z",
+            "end_date": "2022-09-15T01:59:59Z",
+            "banner_image": "assets/images/echo-aria.jpg",
+            "link": "https://pgr.kurogame.net/news/112",
+            "description": "New story chapter, new frames: Tempest and Hypnos"
+        },
+        {
+            "name": "Untold Naraka",
+            "start_date": "2022-07-05T02:00:00Z",
+            "end_date": "2022-08-02T01:59:59Z",
+            "banner_image": "assets/images/untold-naraka.jpg",
+            "link": "https://pgr.kurogame.net/news/101",
+            "description": "New story chapter, new frames: 2B, 9S, A2"
+        },
+        {
+            "name": "Fake Ascension",
+            "start_date": "2022-05-18T02:00:00Z",
+            "end_date": "2022-07-04T01:59:59Z",
+            "banner_image": "assets/images/fake-ascension.jpg",
+            "link": "https://pgr.kurogame.net/news/72",
+            "description": "New story chapter, new frames: Laurel"
+        },
+        {
+            "name": "Lost Chapter",
+            "start_date": "2022-04-13T02:00:00Z",
+            "end_date": "2022-05-17T01:59:59Z",
+            "banner_image": "assets/images/lost-chapter.jpg",
+            "link": "https://pgr.kurogame.net/news/64",
+            "description": "New story chapter, new frames: Qilin and Pavo"
+        },
+        {
+            "name": "Firn Night",
+            "start_date": "2022-03-02T02:00:00Z",
+            "end_date": "2022-04-12T01:59:59Z",
+            "banner_image": "assets/images/firn-night.jpg",
+            "link": "https://pgr.kurogame.net/news/56",
+            "description": "New story chapter, new frames: Rigor"
+        },
+        {
+            "name": "Grand Blue",
+            "start_date": "2022-01-26T02:00:00Z",
+            "end_date": "2022-03-01T01:59:59Z",
+            "banner_image": "assets/images/grand-blue.jpg",
+            "link": "https://youtu.be/--ZoB3jkWsU?si=ljfSBzboUcvGJYyA",
+            "description": "New story chapter, new frames: Rozen and Crocotta"
+        },
+        {
+            "name": "Kowloong Metropolis",
+            "start_date": "2021-12-22T02:00:00Z",
+            "end_date": "2022-01-25T01:59:59Z",
+            "banner_image": "assets/images/kowloong-metropolis.png",
+            "link": "https://youtu.be/D5WGCSZNmuE?si=EKFvJeCzSdaxTF8o",
+            "description": "New story chapter, new frames: Plume"
+        },
+        {
+            "name": "Nona Ouroboros",
+            "start_date": "2021-11-17T02:00:00Z",
+            "end_date": "2021-12-21T01:59:59Z",
+            "banner_image": "assets/images/nona-ouroboros.jpg",
+            "link": "https://youtu.be/FSgrtd6CcK0?si=Qb6EnQibe-OKWaYc",
+            "description": "New story chapter, new frames: Arclight"
+        },
+        {
+            "name": "Eternal Engine",
+            "start_date": "2021-10-12T02:00:00Z",
+            "end_date": "2021-11-16T01:59:59Z",
+            "banner_image": "assets/images/eternal-engine.jpg",
+            "link": "https://youtu.be/KNGHzn0qtYc?si=oz7dPukj1xmPrnxk",
+            "description": "New story chapter, new frames: Veritas and Silverfang"
+        },
+        {
+            "name": "Fallen Star",
+            "start_date": "2021-09-09T02:00:00Z",
+            "end_date": "2021-10-11T01:59:59Z",
+            "banner_image": "assets/images/fallen-star.jpg",
+            "link": "https://youtu.be/b9uDKCmzAXc?si=m7PNJ8pLR16FCc0K",
+            "description": "New story chapter, new frames: Astral and Brilliance"
+        },
+        {
+            "name": "Frozen Darkness",
+            "start_date": "2021-08-03T02:00:00Z",
+            "end_date": "2021-09-08T01:59:59Z",
+            "banner_image": "assets/images/frozen-darkness.jpg",
+            "link": "https://youtu.be/qQMF2NZ2dvM?si=3kZ8pI91QsajcTR4",
+            "description": "New story chapter, new frames: Crimson Abyss and Bastion"
+        },
+        {
+            "name": "Punishing: Gray Raven",
+            "start_date": "2021-07-16T02:00:00Z",
+            "end_date": "",
+            "banner_image": "assets/images/punishing-gray-raven.jpg",
+            "link": "https://youtu.be/Tj7fSPgBSUw?si=wEiYp_m0i8XcTVR4",
+            "description": "Official launching of Punishing: Gray Raven Global"
         }
     ]
 }
